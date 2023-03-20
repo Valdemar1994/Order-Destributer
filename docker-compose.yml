@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:14.7
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: user
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    container_name: order_distributer
+    ports:
+      - 15432:5432
