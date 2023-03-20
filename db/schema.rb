@@ -44,7 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_20_180759) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "manager", default: false
-    t.boolean "admin", default: false
+    t.boolean "distributor", default: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
