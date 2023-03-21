@@ -34,6 +34,7 @@ gem "devise"
 gem 'activeadmin'
 gem 'sassc-rails'
 gem 'pry'
+gem 'bcrypt'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

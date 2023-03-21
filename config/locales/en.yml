@@ -36,3 +36,8 @@ en:
         flash:
           base:
             alert: 'The user can be only a manager or a distributor'
+
+      acceptable_image:
+        flash:
+          avatar_size: 'is too big'
+          avatar_format: 'must be a JPEG or PNG'

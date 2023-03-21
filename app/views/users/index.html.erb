@@ -3,13 +3,13 @@ hello!
 <table class="shadow-lg bg-white border-separate text-center mx-auto">
   <tr> 
     <th class="bg-blue-100 border text-center px-6 py-3">Name</th>
-    <th class="bg-blue-100 border text-center px-6 py-3 ">Email</th>
+    <th class="bg-blue-100 border text-center px-6 py-3">Email</th>
   </tr>
   <tr>
   <% @users.each do |user| %>
     <tr>
-      <td class="border px-6 py-3"><%= user.name %></td>
+      <td class="border px-6 py-3"><%= link_to user.name, user_path(user) %></td>
       <td class="border px-6 py-3"><%= user.email %></td>
     </tr>      
   <% end %>
-</table>
+</table> 
