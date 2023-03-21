@@ -30,4 +30,9 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  models:
+    user:
+      single_role_selection:
+        flash:
+          base:
+            alert: 'The user can be only a manager or a distributor'
