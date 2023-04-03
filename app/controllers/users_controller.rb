@@ -1,4 +1,5 @@
 class UsersController < BaseController
+  
   def index
     @users = User.all
   end
@@ -20,18 +21,14 @@ class UsersController < BaseController
     end
   end
 
-  def create
-   
-  end
-
   def destroy
-
+    @user = User.find(params[:id])
+    @user.destroy
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:id, :name, :email, :password, :password_confirmation, :avatar)
+    params.require(:user).permit(:id, :name, :email, :avatar)
   end
-
 end

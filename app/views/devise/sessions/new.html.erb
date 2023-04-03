@@ -1,26 +1,85 @@
-<h2>Log in</h2>
+<div class="flex flex-col items-center justify-center my-auto mx-auto lg:py-0">
+  <a class="flex items-center mb-4 text-2xl font-semibold text-gray-900 
+    dark:text-white no-underline">
+    <img class="bg-white rounded-full w-20 h-20 mr-2" src="/assets/logo.jpeg" alt="logo">
+    TEST_APP
+  </a>
+  <div class="w-full bg-white rounded-lg shadow-2xl dark:border md:mt-0 sm:max-w-md xl:p-0 
+    dark:bg-gray-800 dark:border-gray-700">
+    <div class="p-6">
+      <h1 class="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 
+        md:text-2xl dark:text-white mt-0">
+        Log in
+      </h1>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="flex p-4 mb-4 text-sm text-rose-800">
+          <%= render "devise/shared/error_messages", resource: resource %>
+        </div>
+        <div>
+            <%= f.label :your_email, class: "block mb-2 text-sm font-medium text-gray-900 
+              dark:text-white" %>
+            <%= f.email_field :email, required: true, autocomplete: "email", placeholder: "Email address", 
+              class: "bg-slate-100 block border border-grey-light w-full p-3 rounded-md 
+                mb-4 text-sm" %>
+        </div>
+        <div>
+            <%= f.label :password, class: "block mb-2 text-sm font-medium text-gray-900 
+              dark:text-white" %>
+            <%= f.password_field :password, required: true, autocomplete: "current-password", 
+              placeholder: "Password", class: "bg-slate-100 block border border-grey-light 
+                w-full p-3 rounded-md mb-4 text-sm" %>
+        </div>
+                    
+        <div class="flex items-center justify-between mb-4">
+          <% if devise_mapping.rememberable? %>
+            <div class="flex items-center">
+              <%= f.check_box :remember_me, class: "h-4 w-4 rounded border-gray-300 
+                text-indigo-600 focus:ring-indigo-500"%>
+              <%= f.label :remember_me, 'Remember me', class: "ml-2 block text-sm 
+                text-gray-900" %>
+            </div>
+          <% end %>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+          <% if devise_mapping.registerable? && controller_name != 'registrations' %>
+            <div class="text-sm mx-4">
+              <%= link_to "Sign up", new_registration_path(resource_name), 
+                class: "font-medium text-indigo-600 hover:text-indigo-500" %>
+            </div>
+          <% end %>  
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+          <% if devise_mapping.recoverable? && controller_name != 
+            'passwords' && controller_name != 'registrations' %>
+            <div class="text-sm">
+              <%= link_to "Forgot your password?", new_password_path(resource_name), 
+                class: "font-medium text-indigo-600 hover:text-indigo-500" %>
+            </div>
+          <% end %>
+        </div>
+        
+        <button id="button" type="submit" class="flex w-full justify-center rounded-md 
+          border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white bg-none 
+          hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 
+          focus:ring-offset-2">Submit</button>
+      <% end %>
+      
+      <div class="my-2 flex items-center before:mt-0.5 before:flex-1 before:border-t 
+        before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
+        <p class="mx-4 mb-0 text-center text-sm font-medium text-gray-900">
+          OR</p>
+      </div>
+      
+      <div class="flex w-full justify-center rounded-md border-transparent bg-indigo-600 
+        py-2 px-4 text-sm font-medium text-white bg-none hover:bg-indigo-700 focus:outline-none 
+        focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 cursor-pointer">
+        <svg viewBox="0 0 24 24" class="fill-current mr-3 w-6 h-5" 
+          xmlns="http://www.w3.org/2000/svg"><path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 
+            5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 
+            4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 
+            12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"/></svg>
+        <span class="border-l border-white h-6 w-1 block"></span>
+        <span class="pl-3">Sign up with Google</span>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
