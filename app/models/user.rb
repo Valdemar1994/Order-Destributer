@@ -1,11 +1,11 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  before_create :single_role_selection
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
-  before_create :single_role_selection
   
+  has_many :orders, inverse_of: 'creator', foreign_key: 'creator_id'
+
   has_one_attached :avatar
 
   validate :acceptable_image
