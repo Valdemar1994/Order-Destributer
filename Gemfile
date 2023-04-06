@@ -35,6 +35,8 @@ gem 'activeadmin'
 gem 'sassc-rails'
 gem 'pry'
 gem 'bcrypt'
+gem 'state_machines'
+gem 'state_machines-activerecord'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
