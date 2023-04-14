@@ -1,0 +1,76 @@
+<div class="py-8 px-4">
+  <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white text-center">Add a new order</h2>
+  <%= form_with model: @order do |f| %>
+    <%# <%= render 'shared/error_messages', resource: @order %>
+    <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+      <div class="w-full">
+        <%= f.label :number, class:"block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+        <%= f.number_field :number, placeholder: "Order number", class:"bg-gray-50 border 
+          border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 
+          focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 
+          dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 
+          dark:focus:border-primary-500" %>
+      </div>
+      <div class="w-full">
+        <%= f.label :phone, class:"block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+        <%= f.phone_field :phone, placeholder: "Phone", class:"bg-gray-50 border border-gray-300 
+          text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block 
+          w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 
+          dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" %>
+      </div>
+      <div class="w-full">
+        <%= f.label :area, class:"block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+        <%= f.select :area, options_for_select(@area), {}, class:"bg-gray-50 border border-gray-300
+          text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block 
+          w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 
+          dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" %>
+      </div>   
+      <div class="w-full">
+        <%= f.label :adress, class:"block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+        <%= f.text_field :adress, placeholder: "Adress", class:"bg-gray-50 border border-gray-300 
+          text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block 
+          w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 
+          dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" %>
+      </div>
+      <div class="w-full">
+        <%= f.label :delivery_time_start, class:"block mb-2 text-sm font-medium text-gray-900 
+          dark:text-white" %>
+        <%= f.datetime_field :delivery_time_start, placeholder: "Delivery time start", 
+          class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+          focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 
+          dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 
+          dark:focus:border-primary-500" %>
+      </div>
+      <div class="w-full">
+        <%= f.label :delivery_time_end, class:"block mb-2 text-sm font-medium text-gray-900 
+          dark:text-white" %>
+        <%= f.datetime_field :delivery_time_end, placeholder: "Delivery time end", 
+          class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+          focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 
+          dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 
+          dark:focus:border-primary-500" %>
+      </div>
+      <div class="sm:col-span-2">
+        <%= f.label :description, class:"block mb-2 text-sm font-medium text-gray-900 
+          dark:text-white" %>
+        <%= f.text_area :description, placeholder: "Description", class:"bg-gray-50 border 
+          border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 
+          focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 
+          dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 
+          dark:focus:border-primary-500" %>
+      </div>
+        <div class="sm:col-span-2">
+        <%= f.label :comment, class:"block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+        <%= f.text_area :comment, placeholder: "Comment", class:"bg-gray-50 border 
+          border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 
+          focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 
+          dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 
+          dark:focus:border-primary-500" %>
+      </div>
+    </div>
+    <button id="button" type="submit" class="flex w-full justify-center rounded-md 
+      border-transparent bg-indigo-600 px-5 py-2.5 mt-4 sm:mt-6 text-sm font-medium text-white bg-none 
+      hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 
+      focus:ring-offset-2">Submit</button>
+  <% end %>
+</div>

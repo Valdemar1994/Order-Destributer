@@ -41,3 +41,9 @@ en:
         flash:
           avatar_size: 'is too big'
           avatar_format: 'must be a JPEG or PNG'
+
+    order:
+      check_delivery_date_and_time:
+        flash:
+          base:
+            alert: 'Время доставки не может быть в прошлом'

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OrderDistributor</title>
+    <title><%= full_title(yield(:title)) %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,8 +12,8 @@
   </head>
 
   <body>
-    <div class="flex flex-col h-screen">
-      <header>
+    <div class="flex flex-col h-screen bg-neutral-100">
+      <header class="bg-white">
         <% if user_signed_in? %>
           <%= render 'layouts/header' %>
         <% end %>
@@ -31,7 +31,7 @@
         <%= yield %>
       </main>
 
-      <footer>
+      <footer class="bg-neutral-100">
         <%= render 'layouts/footer' %>
       </footer>
       </div>
