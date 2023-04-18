@@ -39,11 +39,14 @@ en:
 
       acceptable_image:
         flash:
-          avatar_size: 'is too big'
-          avatar_format: 'must be a JPEG or PNG'
+          base:
+            avatar_size:   'is too big'
+            avatar_format: 'must be a JPEG or PNG'
 
     order:
-      check_delivery_date_and_time:
+      acceptable_datetime:
         flash:
           base:
-            alert: 'Время доставки не может быть в прошлом'
+            alert_start:      'Delivery start time can not be in the past'
+            alert_end:        'Delivery completion time can not be in the past'
+            alert_difference: 'End time can not be earlier than delivery start time'

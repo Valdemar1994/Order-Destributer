@@ -18,7 +18,7 @@ class OrdersController < BaseController
     if @order.save
       redirect_to order_path(@order)
     else
-      redirect_to new_order_path, status: :unprocessable_entity
+      redirect_to new_order_path, alert: "#{@order.errors.full_messages}"
     end
   end
 

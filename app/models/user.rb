@@ -23,12 +23,12 @@ class User < ApplicationRecord
     return unless avatar.attached?
   
     unless avatar.blob.byte_size <= 0.5.megabyte
-      errors.add(:avatar_size, I18n.t('models.user.acceptable_image.flash.avatar_size'))
+      errors.add(:base, I18n.t('models.user.acceptable_image.flash.base.avatar_size'))
     end
   
     acceptable_types = ["image/jpeg", "image/png"]
     unless acceptable_types.include?(avatar.content_type)
-      errors.add(:avatar_format, I18n.t('models.user.acceptable_image.flash.avatar_format'))
+      errors.add(:base, I18n.t('models.user.acceptable_image.flash.base.avatar_format'))
     end
   end
 end

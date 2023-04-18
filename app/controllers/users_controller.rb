@@ -17,7 +17,7 @@ class UsersController < BaseController
     if @user.update(user_params)
       redirect_to current_user
     else
-      redirect_to edit_user_path(@user), alert: "#{@user.errors.first.full_message}"
+      redirect_to edit_user_path(@user), alert: "#{@user.errors.full_messages}"
     end
   end
 
